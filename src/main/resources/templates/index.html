@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" class="bg-orange-100 h-full">
+<head>
+<meta charset="ISO-8859-1">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Product Manager</title>
+</head>
+<body class="h-full">
+	<nav
+		class="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-white shadow sm:items-baseline w-full bg-orange-300">
+		<div class="mb-2 sm:mb-0">
+			<a href="/"
+				class="text-2xl no-underline text-grey-darkest hover:text-blue-dark">Home</a>
+		</div>
+	</nav>
+
+	<div class="pr-4 pt-20 font-mono" align="center">
+		<h1 class="text-5xl content-start">Product Manager</h1>
+		<div class="flex flex-col text-lg">
+			<div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+				<div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+					<div class="overflow-hidden">
+						<div class="content-start">
+							<a href="new"
+								class="h-10 px-5 m-2 text-green-100 transition-colors duration-150 bg-green-700 rounded-lg focus:shadow-outline hover:bg-green-800 content-start">Create
+								Product</a>
+						</div>
+						<table class="min-w-fixed">
+							<thead class="border-b">
+								<tr>
+									<th scope="col"
+										class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+										Product ID</th>
+									<th scope="col"
+										class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+										Name</th>
+									<th scope="col"
+										class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+										Brand</th>
+									<th scope="col"
+										class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+										Made In</th>
+									<th scope="col"
+										class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+										Price</th>
+									<th scope="col"
+										class="text-sm font-medium text-gray-900 px-6 py-4 text-center">
+										Actions</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="product : ${listProducts}"
+									class="text-left indent-8">
+									<td th:text="${product.id}">Product ID</td>
+									<td th:text="${product.name}">Name</td>
+									<td th:text="${product.brand}">Brand</td>
+									<td th:text="${product.madein}">Made In</td>
+									<td th:text="${product.price}">Price</td>
+									<td><a th:href="@{'/edit/' + ${product.id}}"
+										class="h-10 px-5 m-2 text-green-100 transition-colors duration-150 bg-green-700 rounded-lg focus:shadow-outline hover:bg-green-800 content-start">
+											Edit </a> &nbsp;&nbsp;&nbsp;&nbsp; <a
+										th:href="@{'/delete/' + ${product.id}}"
+										class="h-10 px-5 m-2 text-red-100 transition-colors duration-150 bg-red-700 rounded-lg focus:shadow-outline hover:bg-red-800 content-start">
+											Delete </a>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<footer class="bg-white-200 text-center lg:text-left sticky top-[100vh]">
+	<div class="text-grey-darkest text-center p-4"
+		style="background-color: rgba(0, 0, 0, 0);">
+		2022 Copyright: <a class="text-grey-darkest"
+			href="https://github.com/bagusip">Bagus Indiarto P.</a>
+	</div>
+</footer>
+
+</html>

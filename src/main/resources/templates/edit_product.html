@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" class="bg-orange-100 h-full">
+<head>
+<meta charset="ISO-8859-1">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Edit Product</title>
+</head>
+<body>
+
+	<nav
+		class="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-white shadow sm:items-baseline w-full bg-orange-300">
+		<div class="mb-2 sm:mb-0">
+			<a href="/edit"
+				class="text-2xl no-underline text-grey-darkest hover:text-blue-dark">Edit
+				Product</a>
+		</div>
+	</nav>
+
+	<div class="pt-20 font-mono" align="center">
+		<h1 class="text-5xl content-start pb-8">Edit Product</h1>
+		<div class="flex flex-col">
+			<div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+				<div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+					<div class="overflow-hidden">
+						<form action="#" th:action="@{/save}" th:object="${product}"
+							class="w-full max-w-lg" method="post">
+							<div class="flex flex-wrap -mx-3 mb-6">
+								<div class="w-full md:w-full px-3 mb-6 md:mb-0">
+									<label
+										class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+										for="grid-product-name"> Product ID* </label> <input
+										class="appearance-none block w-full bg-white-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+										id="grid-product-name" type="text" th:field="*{id}"
+										placeholder="Insert Product Name" readonly="readonly">
+
+								</div>
+							</div>
+							<div class="flex flex-wrap -mx-3 mb-6">
+								<div class="w-full md:w-full px-3 mb-6 md:mb-0">
+									<label
+										class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+										for="grid-product-name"> Product Name* </label> <input
+										class="appearance-none block w-full bg-white-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+										id="grid-product-name" type="text" th:field="*{name}"
+										placeholder="Insert Product Name">
+
+								</div>
+							</div>
+							<div class="flex flex-wrap -mx-3 mb-6">
+								<div class="w-full md:w-full px-3 mb-6 md:mb-0">
+									<label
+										class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+										for="grid-brand"> Brand* </label> <input
+										class="appearance-none block w-full bg-white-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+										id="grid-brand" type="text" th:field="*{brand}"
+										placeholder="Insert Product Brand" />
+
+								</div>
+							</div>
+
+							<div class="flex flex-wrap -mx-3 mb-6">
+								<div class="w-full md:w-full px-3 mb-6 md:mb-0">
+									<label
+										class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+										for="grid-made-in"> Made In* </label> <input
+										class="appearance-none block w-full bg-white-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+										id="grid-made-in" type="text" th:field="*{madein}"
+										placeholder="Insert Product Made In" />
+								</div>
+							</div>
+							<div class="flex flex-wrap -mx-3 mb-6">
+								<div class="w-full md:w-full px-3 mb-6 md:mb-0">
+									<label
+										class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+										for="grid-zip"> Price* </label> <input
+										class="appearance-none block w-full bg-white-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-8"
+										id="grid-zip" type="text" th:field="*{price}"
+										placeholder="Insert Product Price" />
+									<p class="text-black-500 text-xs italic">* is required</p>
+								</div>
+							</div>
+
+							<div class="flex flex-wrap -mx-3 mb-2">
+								<div class="w-full md:w-full px-3 mb-6 md:mb-0">
+									<button type="submit"
+										class="bg-green-800 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded">
+										Save</button>
+									<button type="submit"
+										class="bg-red-800 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded">
+										<a href="/">Cancel</a>
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer
+		class="bg-white-200 text-center lg:text-left sticky top-[100vh]">
+		<div class="text-grey-darkest text-center p-4"
+			style="background-color: rgba(0, 0, 0, 0);">
+			2022 Copyright: <a class="text-grey-darkest"
+				href="https://github.com/bagusip">Bagus Indiarto P.</a>
+		</div>
+	</footer>
+
+</body>
+</html>
